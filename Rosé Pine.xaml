@@ -1,0 +1,174 @@
+<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:system="clr-namespace:System;assembly=mscorlib">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="pack://application:,,,/Themes/Base.xaml" />
+	</ResourceDictionary.MergedDictionaries>
+	<Geometry x:Key="SearchIconImg">
+    M161.227,161.251 C132.154,169.041 114.901,198.924 122.691,227.997
+    C123.925,232.603 128.659,235.336 133.264,234.102
+    L185.907,219.996 C219.585,210.972 239.57,176.354 230.546,142.677
+    L161.227,161.251 Z
+    M88.1836,159.988 C117.257,167.778 134.51,197.662 126.72,226.735
+    C125.486,231.34 120.752,234.073 116.147,232.839
+    L63.5041,218.733 C29.8264,209.71 9.84094,175.092 18.8649,141.414
+    L88.1836,159.988 Z
+    M186.867,172.98 C152.002,172.98 123.737,201.245 123.737,236.111
+    H186.87 C221.736,236.111 250,207.846 250,172.98
+    L186.867,172.98 Z
+    M63.1327,172.98 C97.9984,172.98 126.263,201.245 126.263,236.111
+    H63.13 C28.2642,236.111 -0.000152,207.846 0,172.98
+    L63.1327,172.98 Z
+    M171.717,75.1263 C171.717,101.276 150.518,122.475 124.369,122.475
+    C98.2188,122.475 77.0202,101.276 77.0202,75.1263
+    C77.0202,48.9764 98.2188,27.7778 124.369,27.7778
+    C150.518,27.7778 171.717,48.9764 171.717,75.1263 Z
+    M144.217,86.2379 C161.649,56.0432 151.303,17.4329 121.108,0
+    L106.06,26.0644 C88.627,56.259 98.9736,94.8694 129.168,112.302
+    L144.217,86.2379 Z
+    M125.299,60.9789 C116.275,27.3012 81.6575,7.31567 47.9797,16.3396
+    L64.3197,77.3211 C73.3436,110.999 107.961,130.984 141.639,121.96
+    L125.299,60.9789 Z
+    M124.926,60.9789 C133.95,27.3012 168.567,7.31567 202.245,16.3396
+    L185.905,77.3211 C176.881,110.999 142.263,130.984 108.586,121.96
+    L124.926,60.9789 Z
+    </Geometry>
+	<!-- Colors -->
+	<SolidColorBrush x:Key="Base" Color="#FF191724"/>
+	<SolidColorBrush x:Key="Surface" Color="#FF1F1D2E"/>
+	<SolidColorBrush x:Key="Overlay" Color="#FF26233A"/>
+	<SolidColorBrush x:Key="Muted" Color="#FF6E6A86"/>
+	<SolidColorBrush x:Key="Subtle" Color="#FF908CAA"/>
+	<SolidColorBrush x:Key="Text" Color="#FFE0DEF4"/>
+	<SolidColorBrush x:Key="Love" Color="#FFEB6F92"/>
+	<SolidColorBrush x:Key="Gold" Color="#FFF6C177"/>
+	<SolidColorBrush x:Key="Rose" Color="#FFEBBCBA"/>
+	<SolidColorBrush x:Key="Pine" Color="#FF31748F"/>
+	<SolidColorBrush x:Key="FoamBrush" Color="#FF9CCFD8"/>
+	<SolidColorBrush x:Key="IrisBrush" Color="#FFC4A7E7"/>
+	<SolidColorBrush x:Key="HighlightLow" Color="#FF21202E"/>
+	<SolidColorBrush x:Key="HighlightMed" Color="#FF403D52"/>
+	<SolidColorBrush x:Key="HighlightHigh" Color="#FF524F67"/>
+	<SolidColorBrush x:Key="ItemSelectedBackgroundColor">#FF524F67</SolidColorBrush>
+	<!-- Spacing -->
+	<Thickness x:Key="ResultMargin">0 0 0 8</Thickness>
+	<!-- General -->
+	<Style x:Key="ItemGlyph" BasedOn="{StaticResource BaseGlyphStyle}" TargetType="{x:Type TextBlock}">
+		<Setter Property="Foreground" Value="{StaticResource FoamBrush}"/>
+	</Style>
+	<Style x:Key="QueryBoxStyle" BasedOn="{StaticResource BaseQueryBoxStyle}" TargetType="{x:Type TextBox}">
+		<Setter Property="Foreground" Value="{StaticResource Text}"/>
+		<Setter Property="CaretBrush" Value="{StaticResource Gold}"/>
+		<Setter Property="FontSize" Value="26"/>
+		<Setter Property="Height" Value="42"/>
+		<Setter Property="Padding" Value="0,0,66,0"/>
+	</Style>
+	<Style x:Key="QuerySuggestionBoxStyle" BasedOn="{StaticResource BaseQuerySuggestionBoxStyle}" TargetType="{x:Type TextBox}">
+		<Setter Property="Foreground" Value="{StaticResource Muted}"/>
+		<Setter Property="FontSize" Value="26"/>
+		<Setter Property="Height" Value="42"/>
+		<Setter Property="Padding" Value="0,0,66,0"/>
+	</Style>
+	<!-- Window -->
+	<Style x:Key="WindowBorderStyle" BasedOn="{StaticResource BaseWindowBorderStyle}" TargetType="{x:Type Border}">
+		<Setter Property="BorderThickness" Value="2"/>
+		<Setter Property="BorderBrush" Value="{StaticResource Muted}"/>
+		<Setter Property="CornerRadius" Value="6"/>
+		<Setter Property="Background" Value="{StaticResource Surface}"/>
+	</Style>
+	<Style x:Key="WindowStyle" BasedOn="{StaticResource BaseWindowStyle}" TargetType="{x:Type Window}">
+		<Setter Property="Width" Value="576"/>
+		<Setter Property="RenderOptions.ClearTypeHint" Value="Enabled"/>
+	</Style>
+	<Style x:Key="PendingLineStyle" BasedOn="{StaticResource BasePendingLineStyle}" TargetType="{x:Type Line}">
+		<Setter Property="Stroke" Value="{StaticResource Gold}"/>
+	</Style>
+	<!-- Items -->
+	<Style x:Key="ItemTitleStyle" TargetType="TextBlock">
+		<Setter Property="Foreground" Value="{StaticResource Pine}"/>
+	</Style>
+	<Style x:Key="ItemSubTitleStyle" BasedOn="{StaticResource BaseItemSubTitleStyle}" TargetType="{x:Type TextBlock}">
+		<Setter Property="Foreground" Value="{StaticResource Muted}"/>
+		<Setter Property="FontSize" Value="13"/>
+	</Style>
+	<Style x:Key="ItemNumberStyle" BasedOn="{StaticResource BaseItemNumberStyle}" TargetType="{x:Type TextBlock}">
+		<Setter Property="Foreground" Value="{StaticResource Muted}"/>
+	</Style>
+	<Style x:Key="ItemTitleSelectedStyle" BasedOn="{StaticResource BaseItemTitleSelectedStyle}" TargetType="{x:Type TextBlock}">
+		<Setter Property="Cursor" Value="Arrow"/>
+		<Setter Property="Foreground" Value="{StaticResource FoamBrush}"/>
+	</Style>
+	<Style x:Key="ItemSubTitleSelectedStyle" BasedOn="{StaticResource BaseItemSubTitleSelectedStyle}" TargetType="{x:Type TextBlock}">
+		<Setter Property="Cursor" Value="Arrow"/>
+		<Setter Property="Foreground" Value="{StaticResource IrisBrush}"/>
+	</Style>
+	<SolidColorBrush x:Key="ItemSelectedBackgroundBrush" Color="#FF403D52"/>
+	<Style x:Key="ItemImageSelectedStyle" BasedOn="{StaticResource BaseItemImageSelectedStyle}" TargetType="{x:Type Image}">
+		<Setter Property="Cursor" Value="Arrow"/>
+	</Style>
+	<!-- Highlight -->
+	<Style x:Key="HighlightStyle" TargetType="Run">
+		<Setter Property="Foreground" Value="{StaticResource Love}"/>
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="FontWeight" Value="Normal"/>
+	</Style>
+	<Style x:Key="ItemHotkeyStyle" TargetType="{x:Type TextBlock}">
+		<Setter Property="FontSize" Value="13"/>
+		<Setter Property="Foreground" Value="{StaticResource FoamBrush}"/>
+	</Style>
+	<Style x:Key="ItemHotkeySelectedStyle" TargetType="{x:Type TextBlock}">
+		<Setter Property="FontSize" Value="13"/>
+		<Setter Property="Foreground" Value="{StaticResource Love}"/>
+	</Style>
+	<!-- Scrollbar -->
+	<Style x:Key="ThumbStyle" BasedOn="{StaticResource BaseThumbStyle}" TargetType="{x:Type Thumb}">
+		<Setter Property="SnapsToDevicePixels" Value="True"/>
+		<Setter Property="OverridesDefaultStyle" Value="true"/>
+		<Setter Property="IsTabStop" Value="false"/>
+		<Setter Property="Width" Value="2"/>
+		<Setter Property="Focusable" Value="false"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Thumb}">
+					<Border Background="{StaticResource Muted}"
+                            BorderBrush="Transparent"
+                            BorderThickness="0"
+                            CornerRadius="2"
+                            DockPanel.Dock="Right"/>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="ScrollBarStyle" BasedOn="{StaticResource BaseScrollBarStyle}" TargetType="{x:Type ScrollBar}"/>
+	<!-- Other -->
+	<Style x:Key="SeparatorStyle" BasedOn="{StaticResource BaseSeparatorStyle}" TargetType="{x:Type Rectangle}">
+		<Setter Property="Fill" Value="{StaticResource HighlightMed}"/>
+		<Setter Property="Height" Value="1"/>
+		<Setter Property="Margin" Value="0,0,0,8"/>
+	</Style>
+	<Style x:Key="SearchIconStyle" BasedOn="{StaticResource BaseSearchIconStyle}" TargetType="{x:Type Path}">
+		<Setter Property="Fill" Value="{StaticResource HighlightMed}"/>
+		<Setter Property="Width" Value="32"/>
+		<Setter Property="Height" Value="32"/>
+	</Style>
+	<Style x:Key="ClockBox" BasedOn="{StaticResource BaseClockBox}" TargetType="{x:Type TextBlock}">
+		<Setter Property="Foreground" Value="{StaticResource FoamBrush}"/>
+	</Style>
+	<Style x:Key="DateBox" BasedOn="{StaticResource BaseDateBox}" TargetType="{x:Type TextBlock}">
+		<Setter Property="Foreground" Value="{StaticResource FoamBrush}"/>
+	</Style>
+	<!-- Preview -->
+	<Style x:Key="PreviewBorderStyle" BasedOn="{StaticResource BasePreviewBorderStyle}" TargetType="{x:Type Border}">
+		<Setter Property="BorderBrush" Value="{StaticResource HighlightMed}"/>
+	</Style>
+	<Style x:Key="PreviewItemTitleStyle" BasedOn="{StaticResource BasePreviewItemTitleStyle}" TargetType="{x:Type TextBlock}">
+		<Setter Property="Foreground" Value="{StaticResource Pine}"/>
+	</Style>
+	<Style x:Key="PreviewItemSubTitleStyle" BasedOn="{StaticResource BasePreviewItemSubTitleStyle}" TargetType="{x:Type TextBlock}">
+		<Setter Property="Foreground" Value="{StaticResource Muted}"/>
+	</Style>
+	<Style x:Key="PreviewGlyph" BasedOn="{StaticResource BasePreviewGlyph}" TargetType="{x:Type TextBlock}">
+		<Setter Property="Foreground" Value="{StaticResource FoamBrush}"/>
+	</Style>
+</ResourceDictionary>
